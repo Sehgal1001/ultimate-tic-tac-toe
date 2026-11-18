@@ -1,39 +1,57 @@
 # 🎮 Ultimate Tic Tac Toe
 
-A modern, interactive, and responsive Tic Tac Toe game built using HTML, CSS, and JavaScript. Enjoy the classic Tic Tac Toe experience with an enhanced user interface, smooth gameplay, and responsive design.
+A modern, interactive, and beautifully designed Tic Tac Toe game built with **HTML, CSS, and JavaScript**. Challenge yourself against the computer or play with a friend, choose different board sizes, and track your gaming performance.
+
+🌐 **Live Demo:** [Play Ultimate Tic Tac Toe](https://sehgal1001.github.io/ultimate-tic-tac-toe/)
 
 ## ✨ Features
 
-- 🎯 Interactive Tic Tac Toe gameplay
-- 🎨 Modern and attractive user interface
-- 📱 Fully responsive design
-- ⚡ Smooth animations and transitions
-- 🏆 Win detection system
-- 🤝 Draw detection
-- 🔄 Restart and reset game functionality
-- 🎵 Sound effects (if enabled)
-- 🖼️ Custom board texture and visual assets
+- 🎮 **Multiple Game Modes** – Play against the computer or enjoy a two-player experience.
+- 📐 **Multiple Board Sizes** – Choose between 3×3, 5×5, and 7×7 boards.
+- 🤖 **AI Opponent** – Challenge the computer with selectable difficulty levels.
+- 🏆 **Game Statistics** – Track your wins, losses, and draws.
+- ↶ **Undo Move** – Undo your previous move during gameplay.
+- 🔄 **New Game** – Start a fresh match whenever you want.
+- 📊 **Match History** – Keep track of your recent completed matches.
+- 💾 **Local Data Storage** – Save your game progress and statistics directly on your device.
+- 🎨 **Modern UI** – Enjoy a premium interface with smooth interactions and an attractive design.
+- 📱 **Responsive Design** – Play across desktop and mobile devices.
+- 🔒 **No Account Required** – Start playing instantly without registration.
 
 ## 🛠️ Technologies Used
 
-- **HTML5** – Structure of the game
-- **CSS3** – Styling, animations, and responsive layout
-- **JavaScript** – Game logic and interactive functionality
-- **SVG** – Scalable visual assets
+| Technology | Purpose |
+|---|---|
+| HTML5 | Website structure |
+| CSS3 | Styling, animations and responsive design |
+| JavaScript | Game logic and interactive functionality |
+| Local Storage | Saving statistics and game data |
+| SVG | Scalable visual assets |
+
+## 🎯 How to Play
+
+1. Open the [Live Game](https://sehgal1001.github.io/ultimate-tic-tac-toe/).
+2. Select your preferred game mode.
+3. Choose your board size (3×3, 5×5, or 7×7).
+4. If playing against the computer, select the AI difficulty.
+5. Player 1 uses **X**, and Player 2 uses **O**.
+6. Take turns placing your marks in empty cells.
+7. Complete the required winning combination to win the match.
+8. Use the Undo option if you want to reverse your previous move.
+9. Check your statistics and recent matches after playing.
 
 ## 📂 Project Structure
 
 ```text
 ultimate-tic-tac-toe/
 │
+├── assets/
+│   └── images/
+│
 ├── css/
 │   ├── game.css
 │   ├── style.css
 │   └── responsive.css
-│
-├── images/
-│   └── assets/
-│       └── board-texture.svg
 │
 ├── js/
 │   └── storage.js
@@ -42,32 +60,29 @@ ultimate-tic-tac-toe/
 └── README.md
 ```
 
-## 🚀 How to Run the Project
+## 🚀 Run Locally
 
-1. Clone this repository:
+**1. Clone the repository**
 
-   ```bash
-   git clone https://github.com/Sehgal1001/ultimate-tic-tac-toe.git
-   ```
+```bash
+git clone https://github.com/Sehgal1001/ultimate-tic-tac-toe.git
+```
 
-2. Open the project folder.
+**2. Navigate to the project directory**
 
-3. Open `index.html` in your browser.
+```bash
+cd ultimate-tic-tac-toe
+```
 
-4. Start playing!
+**3. Open `index.html` in your browser.**
 
-## 🎮 How to Play
+No additional dependencies or installation required.
 
-1. Player 1 uses X.
-2. Player 2 uses O.
-3. Players take turns selecting empty cells.
-4. The first player to complete a winning combination wins.
-5. If all cells are filled without a winner, the game ends in a draw.
-6. Restart the game to play again.
+## 🌐 Live Preview
 
-## 🌐 Live Demo
+Experience the game here:
 
-Add your GitHub Pages or deployment link here.
+👉 https://sehgal1001.github.io/ultimate-tic-tac-toe/
 
 ## 👨‍💻 Developer
 
@@ -78,8 +93,10 @@ Add your GitHub Pages or deployment link here.
 
 ## 📄 License
 
-This project is open-source and available for educational and personal use.
+This project is available for personal and educational use.
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+⭐ If you enjoyed playing this game, consider giving the repository a star!
+
+**Built with ❤️ by Aniket Sahgal**
