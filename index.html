@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101522">
+  <title>Ultimate Tic Tac Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Ultimate Tic Tac Toe home"><span class="brand-mark">✳</span><span>PLAY<span class="brand-light">ROOM</span></span></a>
+      <div class="top-actions"><span class="live-dot"></span><span class="top-label">LOCAL GAME</span><button id="resetStatsBtn" class="text-button" type="button">Reset stats</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span></span> THE CLASSIC, REIMAGINED</div>
+      <h1>ULTIMATE <span>TIC TAC TOE</span></h1>
+      <p class="hero-copy">A little strategy. A little rivalry. A lot of fun.</p>
+    </section>
+
+    <section class="game-layout">
+      <aside class="side-panel">
+        <div class="panel-card setup-card">
+          <div class="panel-heading"><span>01 / GAME SETUP</span><span class="tiny-icon">⌘</span></div>
+          <label class="field-label" for="modeSelect">PLAY MODE</label>
+          <select id="modeSelect" class="select-control">
+            <option value="computer">Player vs Computer</option>
+            <option value="local">Player vs Player</option>
+          </select>
+          <label class="field-label" for="boardSelect">BOARD SIZE</label>
+          <div class="segmented" id="boardChoices">
+            <button type="button" data-size="3" class="segment active">3 × 3</button>
+            <button type="button" data-size="5" class="segment">5 × 5</button>
+            <button type="button" data-size="7" class="segment">7 × 7</button>
+          </div>
+          <label class="field-label" for="difficultySelect" id="difficultyLabel">AI DIFFICULTY</label>
+          <select id="difficultySelect" class="select-control">
+            <option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option>
+          </select>
+          <p class="hint" id="rulesHint">3×3: get 3 in a row to win.</p>
+          <button id="newGameBtn" class="primary-button" type="button"><span>＋</span> New game</button>
+        </div>
+
+        <div class="panel-card stats-card">
+          <div class="panel-heading"><span>02 / YOUR RECORD</span><span class="tiny-icon">↗</span></div>
+          <div class="stats-grid">
+            <div class="stat"><strong id="winsStat">0</strong><span>WINS</span></div>
+            <div class="stat"><strong id="lossesStat">0</strong><span>LOSSES</span></div>
+            <div class="stat"><strong id="drawsStat">0</strong><span>DRAWS</span></div>
+          </div>
+          <div class="record-foot"><span>ALL-TIME LOCAL RECORD</span><span id="gamesStat">0 GAMES</span></div>
+        </div>
+      </aside>
+
+      <section class="board-panel">
+        <div class="board-topline">
+          <div><span class="panel-kicker">MATCH IN PROGRESS</span><h2 id="gameTitle">Classic Match</h2></div>
+          <div class="round-pill"><span class="live-dot"></span> LIVE</div>
+        </div>
+        <div class="players-row">
+          <div class="player-card active-player" id="playerXCard"><div class="player-symbol x-symbol">×</div><div><span class="player-caption">PLAYER 1</span><strong id="playerXName">You</strong></div><span class="turn-indicator"></span></div>
+          <div class="versus">VS</div>
+          <div class="player-card" id="playerOCard"><div class="player-symbol o-symbol">○</div><div><span class="player-caption">PLAYER 2</span><strong id="playerOName">Computer</strong></div><span class="turn-indicator"></span></div>
+        </div>
+        <div class="status-line" role="status" aria-live="polite"><span class="status-icon" id="statusIcon">✦</span><span id="statusText">Your turn — make the first move.</span></div>
+        <div class="board-wrap"><div id="gameBoard" class="game-board" aria-label="Tic Tac Toe game board"></div></div>
+        <div class="board-footer"><span><i class="legend-x">×</i> YOUR MARK</span><span><i class="legend-o">○</i> OPPONENT</span><button id="undoBtn" class="undo-button" type="button" disabled>↶ Undo move</button></div>
+      </section>
+    </section>
+
+    <section class="bottom-grid">
+      <div class="panel-card how-card"><div class="panel-heading"><span>HOW TO PLAY</span><span class="tiny-icon">?</span></div><p id="howText">Take turns placing your mark. Get three in a row horizontally, vertically, or diagonally to win.</p><div class="rule-tags"><span>STRATEGY</span><span>2 PLAYERS</span><span>QUICK MATCH</span></div></div>
+      <div class="panel-card history-card"><div class="panel-heading"><span>RECENT MATCHES</span><span class="tiny-icon">◷</span></div><div id="historyList" class="history-list"><p class="empty-history">Your completed matches will show up here.</p></div></div>
+    </section>
+    <footer><span>PLAYROOM <b>·</b> BUILT FOR THE LOVE OF PLAY</span><span>NO ACCOUNT NEEDED · PROGRESS SAVED ON THIS DEVICE</span></footer>
+  </main>
+  <div id="resultModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <div class="result-modal"><div class="result-spark">✦</div><p class="panel-kicker">MATCH COMPLETE</p><h2 id="resultTitle">You win!</h2><p id="resultMessage">Great game. Ready for another?</p><div class="modal-actions"><button id="closeModalBtn" class="secondary-button" type="button">View board</button><button id="playAgainBtn" class="primary-button" type="button">Play again →</button></div></div>
+  </div>
+  <script src="js/storage.js"></script><script src="js/ai.js"></script><script src="js/game.js"></script><script src="js/main.js"></script>
+</body>
+</html>
