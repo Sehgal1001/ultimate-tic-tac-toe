@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
-<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#a8c9ff" stroke-opacity=".055" stroke-width="1"/></pattern><radialGradient id="glow"><stop stop-color="#77e7d0" stop-opacity=".16"/><stop offset="1" stop-color="#77e7d0" stop-opacity="0"/></radialGradient></defs>
-<rect width="420" height="420" fill="url(#grid)"/><circle cx="210" cy="210" r="205" fill="url(#glow)"/>
-</svg>
